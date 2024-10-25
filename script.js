@@ -9,7 +9,13 @@ function initialize() {
 
 function generateGrid(grid, gridSize) {
     for (let i = 0; i < gridSize; i++) {
-        grid.appendChild(generateSquare());
+        const row = generateRow();
+
+        for (let j = 0; j < gridSize; j++) {
+            row.appendChild(generateSquare());
+        }
+
+        grid.appendChild(row);
     }
 }
 
