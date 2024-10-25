@@ -42,6 +42,7 @@ function changeGridSize() {
         return;
     }
 
+    grid.innerHTML = "";
     generateGrid(newSize);
 }
 
