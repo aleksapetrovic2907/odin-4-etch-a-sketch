@@ -28,6 +28,7 @@ function generateRow() {
 function generateSquare() {
     const square = document.createElement("div");
     square.classList.add("square");
+    square.onmouseover = () => square.style.backgroundColor = getRandomColor();
     return square;
 }
 
