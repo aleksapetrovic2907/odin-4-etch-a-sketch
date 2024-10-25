@@ -1,13 +1,15 @@
 const DEFAULT_GRID_SIZE = 16;
+const MAX_GRID_SIZE = 100;
+let grid;
 
 document.addEventListener("DOMContentLoaded", initialize);
 
 function initialize() {
-    const grid = document.getElementById("grid");
-    generateGrid(grid, DEFAULT_GRID_SIZE);
+    grid = document.getElementById("grid");
+    generateGrid(DEFAULT_GRID_SIZE);
 }
 
-function generateGrid(grid, gridSize) {
+function generateGrid(gridSize) {
     for (let i = 0; i < gridSize; i++) {
         const row = generateRow();
 
@@ -30,6 +32,17 @@ function generateSquare() {
     square.classList.add("square");
     square.onmouseover = () => square.style.backgroundColor = getRandomColor();
     return square;
+}
+
+function changeGridSize() {
+    const newSize = prompt(`What size would you like (max ${MAX_GRID_SIZE})?`);
+
+    if (newSize < 0 || newSize > MAX_GRID_SIZE) {
+        alert("Grid size is not acceptable.");
+        return;
+    }
+
+    generateGrid(newSize);
 }
 
 function getRandomColor() {
