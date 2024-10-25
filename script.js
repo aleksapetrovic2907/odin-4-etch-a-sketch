@@ -13,6 +13,12 @@ function generateGrid(grid, gridSize) {
     }
 }
 
+function generateRow() {
+    const row = document.createElement("div");
+    row.classList.add("row");
+    return row;
+}
+
 function generateSquare() {
     const square = document.createElement("div");
     square.classList.add("square");
