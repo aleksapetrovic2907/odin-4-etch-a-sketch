@@ -37,7 +37,7 @@ function generateSquare() {
 function changeGridSize() {
     const newSize = prompt(`What size would you like (max ${MAX_GRID_SIZE})?`);
 
-    if (newSize < 0 || newSize > MAX_GRID_SIZE) {
+    if (newSize < 1 || newSize > MAX_GRID_SIZE) {
         alert("Grid size is not acceptable.");
         return;
     }
